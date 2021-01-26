@@ -25,15 +25,29 @@
       </div>
     </div>
     <Nuxt />
+    <a-layout-footer style="background:rgb(29, 67, 110); padding-bottom: 0;">
+      <a-row>
+        <a-col span="12">
+          <br>
+          <h1>Young Americans Coalition for Unity, Inc.</h1><br>
+          <p>We are a non-profit organization dedicated to engaging youth in politics and promoting bipartisanship and unity.</p>
+          <p><b>Contact:</b> <a href="mailto:info@yacu.org">info@yacu.org</a>
+            <br><b>Twitter:</b> <a href="https://twitter.com/YACUHQ">@YACUHQ</a>
+            <br>
+            <br>Young Americans Coalition for Unity, Inc.
+            <br>1060 Broadway #1065
+            <br>Albany NY 12204</p>
+        </a-col>
+        <a-col span="12">
+          <iframe style="border: 0;" src="https://www-yacu-org.filesusr.com/html/58c7c9_ec3abb40b59fc9793c6d48a1995ec963.html" width="350px" height="650px"></iframe>
+        </a-col>
+      </a-row>
+      <div class="strip" style="background-color:rgb(29, 50, 87); text-align: center; font-size: 14px; padding: 1em;">© 2020 Young Americans Coalition for Unity, Inc. | <nuxt-link to="/legal">Legal Information</nuxt-link> | <nuxt-link to="/governance">Governance</nuxt-link></div>
+    </a-layout-footer>
   </a-layout>
 </template>
 
 <style>
-body {
-  font-size: 16px;
-  background-color: rgb(29, 67, 110);
-}
-
 #menu-wrapper {
   background: rgba(0,0,0,0.62)
 }
@@ -43,10 +57,11 @@ body {
 }
 
 #join {
-  height: 48px;
+  height: 72px;
   width: 120px;
   float: right;
   border-radius: 0;
+  font-size: 1.2rem;
 }
 
 .ant-menu-horizontal {
@@ -54,6 +69,45 @@ body {
   width: calc(100% - 120px);
   background: none;
   border-bottom-color: rgba(0,0,0,0);
+  font-size: 1.2rem;
+  line-height: 70px;
+}
+
+.strip {
+  width: 100vw; 
+  margin-left: calc(50% - 50vw);
+}
+
+.strip > .ant-col {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-carousel .slick-slide {
+  overflow: hidden;
+}
+.ant-carousel .slick-arrow {
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  color: #fff;
+  background-color: rgba(31, 45, 61, 0.11);
+  opacity: 0.5;
+}
+.ant-carousel .slick-arrow:before {
+  display: none;
+}
+.ant-carousel .slick-arrow:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+.ant-carousel .slick-dots li button {
+  background: #fff;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background: #fff;
 }
 
 @media only screen and (max-width: 980px) {
@@ -77,5 +131,6 @@ main {
   margin: auto;
   padding: 32px;
   width: 100%;
+  text-align: center;
 }
 </style>
