@@ -29,7 +29,7 @@
       <a-row>
         <a-col span="12">
           <br>
-          <h1>Young Americans Coalition for Unity, Inc.</h1><br>
+          <h3>Young Americans Coalition for Unity, Inc.</h3><br>
           <p>We are a non-profit organization dedicated to engaging youth in politics and promoting bipartisanship and unity.</p>
           <p><b>Contact:</b> <a href="mailto:info@yacu.org">info@yacu.org</a>
             <br><b>Twitter:</b> <a href="https://twitter.com/YACUHQ">@YACUHQ</a>
@@ -69,7 +69,7 @@
   width: calc(100% - 120px);
   background: none;
   border-bottom-color: rgba(0,0,0,0);
-  font-size: 1.2rem;
+  font-size: 18px;
   line-height: 70px;
 }
 
@@ -132,5 +132,17 @@ main {
   padding: 32px;
   width: 100%;
   text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 24px;
 }
 </style>

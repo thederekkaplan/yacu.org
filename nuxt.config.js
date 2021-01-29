@@ -54,7 +54,7 @@ export default {
             'border-color-split': 'rgba(0, 0, 0, 0.85)',
             'font-size-base': '16px',
             'statistic-title-font-size': '24px',
-            'statistic-content-font-size': '48px'
+            'statistic-content-font-size': '48px',
           }
         }
       }

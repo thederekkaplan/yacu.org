@@ -1,7 +1,7 @@
 <template>
   <a-layout-content>
     <img src="/catchphrase.png" height="400px" width="500px" :style="{ objectFit: 'cover' }"/>
-    <h1 :style="{ fontSize: '60px', maxWidth: '700px', margin: 'auto' }"><b>Empowering Youth to Make a Difference</b></h1>
+    <h1 :style="{ maxWidth: '700px', margin: 'auto' }"><b>Empowering Youth to Make a Difference</b></h1>
     <br><br>
     <a-row class="strip" style="height: 200px">
       <a-col span="8" :style="{ backgroundColor: 'rgb(0, 150, 206)' }">
@@ -40,13 +40,13 @@
         <div slot="prevArrow" slot-scope="props" style="left: 10px; z-index: 1;">
           <a-icon type="left-circle" />
         </div>
-        <div style="max-width: 700px">
-          <p style="font-size: 2rem;"><i>"Young people have the opportunity to make a difference in the world; we need to come together and unite to a create a better future for America."</i></p>
+        <div style="max-width: 700px;">
+          <p style="font-size: 32px;"><i>"Young people have the opportunity to make a difference in the world; we need to come together and unite to a create a better future for America."</i></p>
           <p>— Andrew Juan, Co-Founder and Political Director</p>
           <br>
         </div>
-        <div style="max-width: 700px">
-          <p style="font-size: 2rem;"><i>"Modern politics is a food fight... Our platform allows people to find their own opinions, meet likeminded people, and discuss opposing views."</i></p>
+        <div style="max-width: 700px;">
+          <p style="font-size: 32px;"><i>"Modern politics is a food fight... Our platform allows people to find their own opinions, meet likeminded people, and discuss opposing views."</i></p>
           <p>— Michael Li, Organizing Director</p>
           <br>
         </div>
@@ -56,14 +56,14 @@
       </a-carousel>
     </div>
     <br>
-    <h1 style="font-size: 60px;">Upcoming Events</h1>
+    <h1>Upcoming Events</h1>
     <iframe width="900px" height="600px" src="https://calendar.google.com/calendar/embed?src=36adc5ki2pme8od50e362760qs%40group.calendar.google.com&ctz=America%2FNew_York"/>
     <br><br><br>
     <a-row class="strip" style="background-color: rgb(29, 50, 87);height: 400px">
       <a-col span="10">
         <div>
-          <h1 style="font-size: 48px;">Get Involved</h1>
-          <h2>Uniting Our Future.<br><u>Now.</u></h2><br>
+          <h2>Get Involved</h2>
+          <h3>Uniting Our Future.<br><u>Now.</u></h3><br>
           <nuxt-link to="/join"><a-button type="primary" size="large">Join Us!</a-button></nuxt-link>
         </div>
       </a-col>
