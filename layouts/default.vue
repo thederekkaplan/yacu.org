@@ -1,30 +1,33 @@
 <template>
   <a-layout>
-    <div id="menu-wrapper">
-      <div id="menu">
-        <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal">
-          <a-menu-item key="index">
-            <nuxt-link to="/">Home</nuxt-link>
-          </a-menu-item>
-          <a-menu-item key="about">
-            <nuxt-link to="/about">About</nuxt-link>
-          </a-menu-item>
-          <a-menu-item key="unet">
-            <nuxt-link to="/unet">Unity Network</nuxt-link>
-          </a-menu-item>
-          <a-menu-item key="Shop">
-            <a href="https://shop.yacu.org">Shop</a>
-          </a-menu-item>
-          <a-menu-item key="Donate">
-            <a href="https://www.paypal.com/donate/?hosted_button_id=K6925Z4PXUB6A">Donate</a>
-          </a-menu-item>
-        </a-menu>
-        <a-button type="primary" id="join">
-          <nuxt-link to="/join">Join Us</nuxt-link>
-        </a-button>
+    <a-affix>
+      <div id="menu-wrapper">
+        <div id="menu">
+          <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal">
+            <a-menu-item key="index">
+              <nuxt-link to="/">Home</nuxt-link>
+            </a-menu-item>
+            <a-menu-item key="about">
+              <nuxt-link to="/about">About</nuxt-link>
+            </a-menu-item>
+            <a-menu-item key="unet">
+              <nuxt-link to="/unet">Unity Network</nuxt-link>
+            </a-menu-item>
+            <a-menu-item key="Shop">
+              <a href="https://shop.yacu.org">Shop</a>
+            </a-menu-item>
+            <a-menu-item key="Donate">
+              <a href="https://www.paypal.com/donate/?hosted_button_id=K6925Z4PXUB6A">Donate</a>
+            </a-menu-item>
+          </a-menu>
+          <a-button type="primary" id="join">
+            <nuxt-link to="/join">Join Us</nuxt-link>
+          </a-button>
+        </div>
       </div>
-    </div>
+    </a-affix>
     <Nuxt />
+    <a-divider />
     <a-layout-footer style="background:rgb(29, 67, 110); padding-bottom: 0;">
       <a-row>
         <a-col span="12">
