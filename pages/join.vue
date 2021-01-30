@@ -35,7 +35,7 @@
   </a-layout-content>
 </template>
 
-<style>
+<style scoped>
 p {
 	max-width: 700px;
 	margin: auto;
