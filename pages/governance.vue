@@ -1,0 +1,82 @@
+<template>
+	<a-layout-content>
+		<h1>YACU Governance</h1>
+		<p>To learn more about the YACU and its structure, please view our <a href="https://bylaws.yacu.org">bylaws</a> and our internal <a href="https://docs.google.com/document/d/e/2PACX-1vQHKoxfKOBv5nYuJWQGkH5y0nMWMdL-_1gN9QOOfTwS3yd3BWi4ZoZwJ5It3ZQqjR8U2SxfWXU8yKGs/pub">Code of Conduct</a>. This page provides a public record of past national leadership board meetings.</p>
+		<h2>Session 4 Meetings</h2>
+		<a-list :grid="{ gutter: 16, column: 3 }" :data-source="four" style="text-align: left;">
+			<a-list-item slot="renderItem" slot-scope="item, index">
+				<h3>Session 4, Meeting {{ item.num }}</h3>
+				{{ item.date }} <br>
+				<a :href="item.agenda">Meeting Agenda</a> <br>
+				Meeting Recordings:
+				<ul>
+					<a v-for="(link, index) in item.recordings" :key="link" :href="link"><li>Part {{ index + 1 }}</li></a>
+				</ul>
+			</a-list-item>
+		</a-list>
+		<h2 >Session 3 Meetings</h2>
+		<a-list :grid="{ gutter: 16, column: 3 }" :data-source="three" style="text-align: left;">
+			<a-list-item slot="renderItem" slot-scope="item, index">
+				<h3>Session 3, Meeting {{ item.num }}</h3>
+				{{ item.date }} <br>
+				<a :href="item.agenda">Meeting Agenda</a> <br>
+				Meeting Recordings:
+				<ul>
+					<a v-for="(link, index) in item.recordings" :key="link" :href="link"><li>Part {{ index + 1 }}</li></a>
+				</ul>
+			</a-list-item>
+		</a-list>
+	</a-layout-content>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			four: [
+				{
+					num: 1,
+					date: "January 1, 2021 at 9:15 pm ET",
+					agenda: "https://example.com",
+					recordings: [
+						"https://example.com",
+						"https://example.com",
+					]
+				},
+				{
+					num: 2,
+					date: "January 1, 2021 at 9:15 pm ET",
+					agenda: "https://example.com",
+					recordings: [
+						"https://example.com",
+						"https://example.com",
+						"https://example.com",
+						"https://example.com",
+					]
+				},
+			],
+			three: [
+				{
+					num: 1,
+					date: "January 1, 2021 at 9:15 pm ET",
+					agenda: "https://example.com",
+					recordings: [
+						"https://example.com",
+						"https://example.com",
+						"https://example.com",
+						"https://example.com",
+					]
+				},
+				{
+					num: 2,
+					date: "January 1, 2021 at 9:15 pm ET",
+					agenda: "https://example.com",
+					recordings: [
+						"https://example.com",
+					]
+				}
+			]
+		}
+	}
+}
+</script>
