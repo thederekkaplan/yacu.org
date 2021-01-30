@@ -28,7 +28,23 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/firebase'],
+
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyBY_P_2VrdTT57HfVWiFySHyXQ7tC6PWAM',
+      authDomain: 'yacu-website.firebaseapp.com',
+      projectId: 'yacu-website',
+      storageBucket: 'yacu-website.appspot.com',
+      messagingSenderId: '842555177409',
+      appId: '1:842555177409:web:7f1c5f927cb889d8a0d740',
+      measurementId: 'G-4FY23Z9TBD',
+    },
+    services: {
+      firestore: true,
+      storage: true,
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

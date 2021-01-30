@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/firebase": "^7.4.1",
     "ant-design-vue": "^1.6.5",
     "core-js": "^3.6.5",
+    "firebase": "^8.2.5",
     "nuxt": "^2.14.6"
   },
   "devDependencies": {
