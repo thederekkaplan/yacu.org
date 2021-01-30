@@ -26,7 +26,7 @@
         </div>
       </div>
     </a-affix>
-    <Nuxt />
+    <Nuxt keep-alive />
     <a-divider />
     <a-layout-footer style="background:rgb(29, 67, 110); padding-bottom: 0;">
       <a-row>
