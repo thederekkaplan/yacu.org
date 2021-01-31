@@ -4,7 +4,7 @@
 		<p>To learn more about the YACU and its structure, please view our <a href="https://bylaws.yacu.org">bylaws</a> and our internal <a href="https://docs.google.com/document/d/e/2PACX-1vQHKoxfKOBv5nYuJWQGkH5y0nMWMdL-_1gN9QOOfTwS3yd3BWi4ZoZwJ5It3ZQqjR8U2SxfWXU8yKGs/pub">Code of Conduct</a>. This page provides a public record of past national leadership board meetings.</p>
 		<h2>Session 4 Meetings</h2>
 		<a-list :grid="{ gutter: 16, column: 3 }" :data-source="four" style="text-align: left;">
-			<a-list-item slot="renderItem" slot-scope="item, index">
+			<a-list-item slot="renderItem" slot-scope="item, index" style="height: 250px; overflow: auto;">
 				<h3>Session 4, Meeting {{ item.num }}</h3>
 				{{ item.date }} <br>
 				<a :href="item.agenda">Meeting Agenda</a> <br>
@@ -14,7 +14,7 @@
 				</ul>
 			</a-list-item>
 		</a-list>
-		<h2 >Session 3 Meetings</h2>
+		<h2>Session 3 Meetings</h2>
 		<a-list :grid="{ gutter: 16, column: 3 }" :data-source="three" style="text-align: left;">
 			<a-list-item slot="renderItem" slot-scope="item, index">
 				<h3>Session 3, Meeting {{ item.num }}</h3>
