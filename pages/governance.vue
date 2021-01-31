@@ -33,50 +33,34 @@
 export default {
 	data() {
 		return {
-			four: [
-				{
-					num: 1,
-					date: "January 1, 2021 at 9:15 pm ET",
-					agenda: "https://example.com",
-					recordings: [
-						"https://example.com",
-						"https://example.com",
-					]
-				},
-				{
-					num: 2,
-					date: "January 1, 2021 at 9:15 pm ET",
-					agenda: "https://example.com",
-					recordings: [
-						"https://example.com",
-						"https://example.com",
-						"https://example.com",
-						"https://example.com",
-					]
-				},
-			],
-			three: [
-				{
-					num: 1,
-					date: "January 1, 2021 at 9:15 pm ET",
-					agenda: "https://example.com",
-					recordings: [
-						"https://example.com",
-						"https://example.com",
-						"https://example.com",
-						"https://example.com",
-					]
-				},
-				{
-					num: 2,
-					date: "January 1, 2021 at 9:15 pm ET",
-					agenda: "https://example.com",
-					recordings: [
-						"https://example.com",
-					]
-				}
-			]
+			four: [],
+			three: [],
 		}
+	},
+	async fetch() {
+		this.three = [];
+		const snapshot3 = await this.$fire.firestore.collection('session3').orderBy('num', 'desc').get();
+		snapshot3.forEach(doc => {
+			const data = doc.data();
+			this.three.push({
+				num: data.num,
+				agenda: data.agenda,
+				recordings: data.recordings,
+				date: data.date.toDate().toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZoneName: 'short', timeZone: "America/New_York" }),
+			});
+		});
+
+		this.four = [];
+		const snapshot4 = await this.$fire.firestore.collection('session4').orderBy('num', 'desc').get();
+		snapshot4.forEach(doc => {
+			const data = doc.data();
+			this.four.push({
+				num: data.num,
+				agenda: data.agenda,
+				recordings: data.recordings,
+				date: data.date.toDate().toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZoneName: 'short', timeZone: "America/New_York" }),
+			});
+		});
 	}
 }
 </script>
