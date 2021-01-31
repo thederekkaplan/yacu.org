@@ -55,7 +55,26 @@ export default {
 		this.board = []
 		const snapshot = await this.$fire.firestore.collection('board').orderBy('joined').get()
 		snapshot.forEach(doc => {
-			this.board.push(doc.data());
+			const data = doc.data()
+			this.board.push({
+				name: data.name,
+				position: data.position,
+				description: data.description,
+				srcName: data.src,
+			});
+		});
+	},
+	beforeMount () {
+		Promise.all(this.board.map(item => {
+			if (item.srcName) {
+				return this.$fire.storage.ref().child(item.srcName).getDownloadURL().then(url => {
+					return { ...item, src: url };
+				});
+			} else {
+				return { ...item, src: '' };
+			}
+		})).then(arr => {
+			this.board = arr;
 		});
 	},
     fetchOnServer: true,
