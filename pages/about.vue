@@ -63,19 +63,28 @@ export default {
 				srcName: data.src,
 			});
 		});
+		if (process.browser) {
+			this.loadPictures();
+		}
 	},
-	beforeMount () {
-		Promise.all(this.board.map(item => {
-			if (item.srcName) {
-				return this.$fire.storage.ref().child(item.srcName).getDownloadURL().then(url => {
-					return { ...item, src: url };
-				});
-			} else {
-				return { ...item, src: '' };
+	methods: {
+		async loadPictures () {
+			const addSrc = async item => {
+				if(item.srcName) {
+					const url = await this.$fire.storage.ref().child(item.srcName).getDownloadURL()
+					return { ...item, src: url }
+				} else {
+					return { ...item, src: '' };
+				}
 			}
-		})).then(arr => {
-			this.board = arr;
-		});
+
+			this.board = await Promise.all(this.board.map(addSrc));
+		},
+	},
+	mounted () {
+		if (!this.$fetchState.pending) {
+			this.loadPictures();
+		}
 	},
     fetchOnServer: true,
 }
