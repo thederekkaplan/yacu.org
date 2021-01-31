@@ -57,7 +57,6 @@ export default {
 		snapshot.forEach(doc => {
 			this.board.push(doc.data());
 		});
-		console.log(this.board)
 	},
     fetchOnServer: true,
 }
