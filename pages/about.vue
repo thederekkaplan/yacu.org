@@ -19,15 +19,14 @@
   	<h2>Our Board</h2>
   	<p>The Board of the YACU is comprised of leaders of major teams at the YACU. Board members are either founders of the organization or carefully selected and elected to their position by the other board members to fulfill a vacancy. The Board works to lead each of their respective teams, as well as drive the organization as a whole, making decisions that affect the social structure.</p>
   	<br>
-  	<a-list :loading="$fetchState.pending" :data-source="board">
+  	<a-list :loading="$fetchState.pending" :data-source="board" style="text-align: left;">
   		<a-list-item slot="renderItem" slot-scope="item, index">
-  			<a-list-item-meta :title="item.name + ' (' + item.position + ')'" :description="item.description">
+  			<a-list-item-meta :title="item.name+' ('+item.position+')'" :description="item.description">
 	        	<a-avatar :size="128" slot="avatar" :src="item.src" />
 			</a-list-item-meta>
   		</a-list-item>
   	</a-list>
   	<br>
-  	<p v-for="item in board" :key="item.name">{{item.name}}</p>
   	<p style="max-width: 700px; margin: auto;">The YACU would also like to thank the following people for their work in the early days of the organization and the time they devoted for a better, bipartisan future:</p>
   	<br>
   	<ul style="list-style: none; padding-left: 0;">
