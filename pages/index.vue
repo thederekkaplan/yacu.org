@@ -15,26 +15,19 @@
       </a-col>
     </a-row>
     <br><br>
-    <a :href="cover.href">
+    <!--<a :href="cover.href">
       <a-card hoverable :bordered="false">
         <a-card-meta :title="cover.title" :description="cover.description">
             <a-avatar slot="avatar" :src="cover.src" />
           </a-card-meta>
       </a-card>
-    </a> 
-    </a-card>
+    </a>-->
+    <h2>By Our Members</h2>
     <br>
-    <a-list :grid="{ gutter: 16, column: 3 }" :data-source="list">
-      <a-list-item slot="renderItem" slot-scope="item, index">
-        <a :href="item.href">
-          <a-card hoverable :bordered="false">
-            <img slot="cover" :src="item.src"/>
-            <a-card-meta :title="item.title" :description="item.description" />
-          </a-card>
-        </a>
-      </a-list-item>
-    </a-list>
+    <unity-network limit="3" />
     <br>
+    <nuxt-link to="/unet"><a-button type="primary" size="large">Read More</a-button></nuxt-link>
+    <br><br>
     <div class="strip" style="background-color: rgb(29, 50, 87); padding: 24px; ">
       <a-carousel style="max-width: 980px; margin: auto;" arrows>
         <div slot="prevArrow" slot-scope="props" style="left: 10px; z-index: 1;">
