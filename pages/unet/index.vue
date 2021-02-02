@@ -6,13 +6,13 @@
         <a-spin :spinning="$fetchState.pending">
 			<a-row type="flex" :gutter="[32, 32]">
 				<a-col v-for="item in articles" :key="item.href" span="8">
-					<a :href="'/unet/' + item.href">
+					<nuxt-link :to="'/unet/' + item.href">
 		    			<a-card hoverable :bordered="false" style="height: 100%">
 		    				<!--<img slot="cover" :src="item.src"/>-->
 		    				<h3>{{ item.title }}</h3>
 							<a-card-meta :description="'By ' + item.author" />
 						</a-card>
-					</a>
+					</nuxt-link>
 				</a-col>
 			</a-row>
 		</a-spin>

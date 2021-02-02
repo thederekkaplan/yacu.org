@@ -11,6 +11,7 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@nuxt/markdown": "0.0.21",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/firebase": "^7.4.1",
     "ant-design-vue": "^1.6.5",
