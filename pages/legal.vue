@@ -5,6 +5,18 @@
 		<h3><a href="/Terms%20Of%20Use.pdf"><a-icon type="file-pdf"/> Terms of Use</a></h3>
 		<h3><a href="/Privacy%20Policy.pdf"><a-icon type="file-pdf"/> Privacy Policy</a></h3>
 		<h2>Conflict of Interest Disclosures</h2>
-		<iframe src="https://airtable.com/embed/shrfVdpsGYYwYe94N?backgroundColor=purple&amp;viewControls=on" width="100%" height="1000px" frameborder="0"/>
+        <a-spin :spinning="spin">
+			<iframe src="https://airtable.com/embed/shrfVdpsGYYwYe94N?backgroundColor=purple&amp;viewControls=on" width="100%" height="1000px" frameborder="0" @load="spin=false" />
+		</a-spin>
 	</a-layout-content>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      spin: true,
+    }
+  }
+}
+</script>
