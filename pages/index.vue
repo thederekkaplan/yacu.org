@@ -5,23 +5,16 @@
     <br><br>
     <a-row class="strip" style="height: 200px">
       <a-col span="8" :style="{ backgroundColor: 'rgb(0, 150, 206)' }">
-        <a-statistic title="Members" :value="867" valueStyle="fontWeight: bold;" />
+        <a-statistic title="Members" :value="members" valueStyle="fontWeight: bold;" />
       </a-col>
       <a-col span="8" :style="{ backgroundColor: 'rgb(105, 72, 152)' }">
-        <a-statistic title="Chapters" :value="36" valueStyle="fontWeight: bold;" />
+        <a-statistic title="Chapters" :value="chapters" valueStyle="fontWeight: bold;" />
       </a-col>
       <a-col span="8" :style="{ backgroundColor: 'rgb(246, 73, 59)' }">
-        <a-statistic title="States" :value="16" valueStyle="fontWeight: bold;" />
+        <a-statistic title="States" :value="states" valueStyle="fontWeight: bold;" />
       </a-col>
     </a-row>
     <br><br>
-    <!--<a :href="cover.href">
-      <a-card hoverable :bordered="false">
-        <a-card-meta :title="cover.title" :description="cover.description">
-            <a-avatar slot="avatar" :src="cover.src" />
-          </a-card-meta>
-      </a-card>
-    </a>-->
     <h2>By Our Members</h2>
     <br>
     <unity-network limit="3" />
@@ -71,11 +64,9 @@
 export default {
   data() {
     return {
-      cover: {
-          title: "Lorem Ipsum",
-          src: "/catchphrase.png",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit."
-      },
+      members: 0,
+      chapters: 0,
+      states: 0,
       list: [
         {
           title: "Lorem Ipsum",
@@ -92,6 +83,13 @@ export default {
         },
       ]
     }
+  },
+  async fetch () {
+    const doc = await this.$fire.firestore.collection('statistics').doc('default').get();
+    const data = doc.data();
+    this.members = data.members;
+    this.chapters = data.chapters;
+    this.states = data.states;
   }
 }
 </script>
