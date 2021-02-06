@@ -1,7 +1,7 @@
 <template>
 	<a-spin :spinning="$fetchState.pending">
 		<a-row type="flex" :gutter="[32, 32]">
-			<a-col v-for="item in articles" :key="item.href" span="8">
+			<a-col v-for="item in ((truncate && $mq == 'sm') ? articles.slice(0,2) : articles)" :key="item.href" :xs="24" :sm="12" :md="8">
 				<nuxt-link :to="'/unet/' + item.href">
 					<a-card hoverable :bordered="false" style="height: 100%">
 						<img slot="cover" :src="item.src"/>
@@ -16,7 +16,7 @@
 
 <script>
 	export default {
-		props: ['limit'],
+		props: ['limit', 'truncate'],
 		data() {
 			return {
 				articles: [],

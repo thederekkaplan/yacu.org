@@ -28,7 +28,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/firebase'],
+  modules: ['@nuxtjs/firebase', 'nuxt-mq'],
 
   firebase: {
     config: {
@@ -43,6 +43,15 @@ export default {
     services: {
       firestore: true,
       storage: true,
+    }
+  },
+
+  mq: {
+    defaultBreakpoint: 'sm',
+    breakpoints: {
+      sm: 768,
+      md: 992,
+      lg: Infinity,
     }
   },
 

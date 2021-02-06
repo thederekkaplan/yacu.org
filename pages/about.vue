@@ -5,15 +5,15 @@
   	<p>At the YACU, you can volunteer, lead, make new friends, and pursue opportunities only our coalition can provide. Whatever you believe, wherever you are, and why ever you're here: the YACU welcomes you.</p>
   	<br><br>
   	<a-row class="strip" style="background-color: rgb(29, 50, 87); height: 450px;">
-		<a-col span="12">
+		<a-col :md="12" :sm="24">
 			<div style="padding: 32px 64px;">
 				<h2>Our Mission</h2>
 				<p>The Young Americans Coalition for Unity is a nonprofit organization dedicated to engaging youth in politics and promoting unity and bipartisanship. We work to empower both high school and college students to engage in bipartisan discussion and become politically involved in their local community and national politics.</p>
 			</div>
 		</a-col>
-		<a-col span="12" style="overflow: hidden;">
-			<img style="display: block; object-position: 0 -96px;" src="/capitol.jpg">
-		</a-col>
+		<a-col v-if="$mq != 'sm'" span="12" style="overflow: hidden;">
+	      <img style="display: block;" src="/capitol.jpg">
+	    </a-col>
   	</a-row>
   	<br><br>
   	<h2>Our Board</h2>

@@ -1,36 +1,34 @@
 <template>
   <a-layout>
-    <a-affix>
-      <div id="menu-wrapper">
-        <div id="menu">
-          <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal">
-            <a-menu-item key="index">
-              <nuxt-link to="/">Home</nuxt-link>
-            </a-menu-item>
-            <a-menu-item key="about">
-              <nuxt-link to="/about">About</nuxt-link>
-            </a-menu-item>
-            <a-menu-item key="unet">
-              <nuxt-link to="/unet">Unity Network</nuxt-link>
-            </a-menu-item>
-            <a-menu-item key="Shop">
-              <a href="https://shop.yacu.org">Shop</a>
-            </a-menu-item>
-            <a-menu-item key="Donate">
-              <a href="https://www.paypal.com/donate/?hosted_button_id=K6925Z4PXUB6A">Donate</a>
-            </a-menu-item>
-          </a-menu>
-          <a-button type="primary" id="join">
-            <nuxt-link to="/join">Join Us</nuxt-link>
-          </a-button>
-        </div>
+    <div id="menu-wrapper">
+      <div id="menu">
+        <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal">
+          <a-menu-item key="index">
+            <nuxt-link to="/">Home</nuxt-link>
+          </a-menu-item>
+          <a-menu-item key="about">
+            <nuxt-link to="/about">About</nuxt-link>
+          </a-menu-item>
+          <a-menu-item key="unet">
+            <nuxt-link to="/unet">Unity Network</nuxt-link>
+          </a-menu-item>
+          <a-menu-item key="Shop">
+            <a href="https://shop.yacu.org">Shop</a>
+          </a-menu-item>
+          <a-menu-item key="Donate">
+            <a href="https://www.paypal.com/donate/?hosted_button_id=K6925Z4PXUB6A">Donate</a>
+          </a-menu-item>
+        </a-menu>
+        <a-button type="primary" id="join">
+          <nuxt-link to="/join">Join Us</nuxt-link>
+        </a-button>
       </div>
-    </a-affix>
+    </div>
     <Nuxt keep-alive />
     <a-divider />
     <a-layout-footer style="background:rgb(29, 67, 110); padding-bottom: 0;">
       <a-row>
-        <a-col span="12">
+        <a-col :md="12" :sm="24">
           <br>
           <h3>Young Americans Coalition for Unity, Inc.</h3><br>
           <p>We are a non-profit organization dedicated to engaging youth in politics and promoting bipartisanship and unity.</p>
@@ -41,8 +39,8 @@
             <br>1060 Broadway #1065
             <br>Albany NY 12204</p>
         </a-col>
-        <a-col span="12">
-          <iframe style="border: 0;" src="https://www-yacu-org.filesusr.com/html/58c7c9_ec3abb40b59fc9793c6d48a1995ec963.html" width="350px" height="650px"></iframe>
+        <a-col :md="12" :sm="24">
+          <iframe style="border: 0; width: 100%; max-width: 350px; height: 650px;" src="https://www-yacu-org.filesusr.com/html/58c7c9_ec3abb40b59fc9793c6d48a1995ec963.html"></iframe>
         </a-col>
       </a-row>
       <div class="strip" style="background-color:rgb(29, 50, 87); text-align: center; font-size: 14px; padding: 1em;">© 2020 Young Americans Coalition for Unity, Inc. | <nuxt-link to="/legal">Legal Information</nuxt-link> | <nuxt-link to="/governance">Governance</nuxt-link></div>
