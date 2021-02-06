@@ -11,7 +11,13 @@
   	<a href="https://linktr.ee/volunteer_yacu"><a-button type="primary" size="large">Apply Now!</a-button></a>
   	<a-divider id="event">Attend an Event!</a-divider>
     <a-spin :spinning="spinEvents">
-      <iframe width="750px" height="600px" src="https://www.mobilize.us/embed/yacu/feed/" frameborder="0" @load="spinEvents=false" />
+      <iframe style="width: 100%; max-width: 750px; height: 600px;" src="https://www.mobilize.us/embed/yacu/feed/" frameborder="0" @load="spinEvents=false" />
+    </a-spin>
+    <a-divider id="chapter">Join a Chapter!</a-divider>
+    <p>Chapters are the foundation for YACU and will be a way for all students to connect with our partners, participate in political activism, have bipartisan discussions, and just have fun! Through a network of chapters across the country, you'll be able to connect with people near you in a positive and meaningful way!</p>
+    <br>
+    <a-spin :spinning="spinChapters">
+      <iframe style="width: 100%; max-width: 750px; height: 600px;" src="https://www.google.com/maps/d/embed?mid=1HutYcz1t17FjHAu1Q0x0Su2ifxmbS_9u" frameborder="0" @load="spinChapters=false" />
     </a-spin>
   	<a-divider id="connection">Learn About Our Connections!</a-divider>
   	<p>The Young Americans Coalition for Unity is proud to be connected with a variety of politicians, organizations, and academics to offer our members opportunities in many different fields. Our connections with these three groups are facilitated by the outreach subdivision of the political team. If you would like to be connected with a politician, organization, or academic that is not listed on our database, please use <a href="https://airtable.com/embed/shrGO0v2W2B6SCRrK">this form</a> to request that our team contact them. These databases are updated regularly.</p>
@@ -54,6 +60,7 @@ export default {
       spin3: true,
       spin4: true,
       spinEvents: true,
+      spinChapters: true,
     }
   }
 }
