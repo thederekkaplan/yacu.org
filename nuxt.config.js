@@ -7,7 +7,9 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'The Young Americans Coalition for Unity (YACU) is empowering young people across America to engage in politics and make a difference.' },
+      { hid: 'image', name: 'og:image', content: 'https://yacu.org/catchphrase.png' },
+      { hid: 'site_name', name: 'og:site_name', content: 'Young Americans Coalition for Unity' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

@@ -37,6 +37,9 @@
 
 <script>
 export default {
+	head: {
+		title: 'Governance | Young Americans Coalition for Unity'
+	},
 	data() {
 		return {
 			four: [],
