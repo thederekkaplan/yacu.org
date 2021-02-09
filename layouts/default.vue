@@ -16,7 +16,7 @@
             <a href="https://shop.yacu.org">Shop</a>
           </a-menu-item>
           <a-menu-item key="Donate">
-            <a href="https://www.paypal.com/donate/?hosted_button_id=K6925Z4PXUB6A">Donate</a>
+            <a href="https://donate.yacu.org">Donate</a>
           </a-menu-item>
         </a-menu>
         <a-button type="primary" id="join">
