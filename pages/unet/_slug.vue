@@ -15,7 +15,7 @@
 	export default {
 		head() {
 			return {
-				title: this.title + ' | Unity Network',
+				title: this.$fetchState.error ? 'Not Found | Young Americans Coalition for Unity' : this.title + ' | Unity Network',
 				meta: [
 					{ hid: 'description', name: 'description', content: 'The YACU Unity Network is a group of student authors, editors, and content producers who seek to inform others through the publication of articles, podcasts, and policy papers!' },
 					{ hid: 'author', name: 'author', content: this.author }
@@ -36,7 +36,8 @@
 				if (process.server) {
 					this.$nuxt.context.res.statusCode = 404
 				}
-				this.$nuxt.error('Page not found');
+				this.$nuxt.error({ statusCode: 404, message: 'Page not found' });
+				this.loading = false;
 			}
 			const data = doc.data();
 			this.title = data.title;

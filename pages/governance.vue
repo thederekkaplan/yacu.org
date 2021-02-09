@@ -1,7 +1,7 @@
 <template>
 	<a-layout-content>
 		<h1>YACU Governance</h1>
-		<p>To learn more about the YACU and its structure, please view our <a href="https://bylaws.yacu.org">bylaws</a> and our internal <a href="https://docs.google.com/document/d/e/2PACX-1vQHKoxfKOBv5nYuJWQGkH5y0nMWMdL-_1gN9QOOfTwS3yd3BWi4ZoZwJ5It3ZQqjR8U2SxfWXU8yKGs/pub">Code of Conduct</a>. This page provides a public record of past national leadership board meetings.</p>
+		<p>To learn more about the YACU and its structure, please view our <a href="https://bylaws.yacu.org">bylaws</a> and our internal <a href="https://docs.google.com/document/d/e/2PACX-1vQHKoxfKOBv5nYuJWQGkH5y0nMWMdL-_1gN9QOOfTwS3yd3BWi4ZoZwJ5It3ZQqjR8U2SxfWXU8yKGs/pub">Code of Conduct</a>. We have also published our <nuxt-link to="/finance/reports/2020">2020 financial report</nuxt-link>. This page provides a public record of past national leadership board meetings.</p>
 		<h2>Session 4 Meetings</h2>
 		<a-spin :spinning="$fetchState.pending">
 			<a-row type="flex" :gutter="[16, 16]">
