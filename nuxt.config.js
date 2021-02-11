@@ -36,6 +36,7 @@ export default {
     config: {
       apiKey: 'AIzaSyBY_P_2VrdTT57HfVWiFySHyXQ7tC6PWAM',
       authDomain: 'yacu-website.firebaseapp.com',
+      databaseURL: 'https://yacu-website.firebaseapp.com',
       projectId: 'yacu-website',
       storageBucket: 'yacu-website.appspot.com',
       messagingSenderId: '842555177409',
@@ -45,6 +46,7 @@ export default {
     services: {
       firestore: true,
       storage: true,
+      analytics: true,
     }
   },
 
