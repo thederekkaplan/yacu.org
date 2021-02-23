@@ -1,5 +1,5 @@
 <template>
-	<a-spin :spinning="$fetchState.pending">
+	<a-spin :spinning="loading">
 		<a-row type="flex" :gutter="[32, 32]">
 			<a-col v-for="item in ((truncate && $mq == 'sm') ? articles.slice(0,2) : articles)" :key="item.href" :xs="24" :sm="12" :md="8">
 				<nuxt-link :to="'/unet/' + item.href">
@@ -20,6 +20,7 @@
 		data() {
 			return {
 				articles: [],
+				loading: true,
 			}
 		},
 		async fetch () {
@@ -34,6 +35,24 @@
 					download: data.download,
 				});
 			});
+			this.loading = false;
+		},
+		methods: {
+			async loadMore () {
+				this.loading = true;
+				const pointer = await this.$fire.firestore.collection('unet').doc(this.articles[this.articles.length - 1].href).get();
+				const snapshot = await this.$fire.firestore.collection('unet').orderBy('date', 'desc').startAfter(pointer).limit(this.limit).get();
+				snapshot.forEach(doc => {
+					const data = doc.data();
+					this.articles.push({
+						title: data.title,
+						author: data.author,
+						href: doc.id,
+						download: data.download,
+					});
+				});
+				this.loading = false;
+			}
 		},
 	}
 </script>
