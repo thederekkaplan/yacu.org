@@ -1,8 +1,9 @@
 <template>
   <a-layout>
     <div id="menu-wrapper">
+      <banner text="<b>Sign the Youth Unity Pledge at <a style='color: rgba(255, 255, 255, 0.85); text-decoration: underline;' href='https://youthunitypledge.com'>youthunitypledge.com</a>!</b>" />
       <div id="menu">
-        <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal">
+        <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal" >
           <a-menu-item key="index">
             <nuxt-link to="/">Home</nuxt-link>
           </a-menu-item>
