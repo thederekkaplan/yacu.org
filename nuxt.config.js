@@ -1,3 +1,5 @@
+const path = require('path')
+
 export default {
   ssr: true,
 
@@ -61,6 +63,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend (config) {
+      config.resolve.alias['@ant-design/icons/lib/dist$'] = path.join(__dirname, './plugins/icons.js')
+    },
     babel: {
       plugins: [
         ['import', { libraryName: 'ant-design-vue'}]
