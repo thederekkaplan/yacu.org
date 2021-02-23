@@ -1,6 +1,6 @@
 <template>
 	<a-layout-content>
-		<h1>{{ title }}</h1>
+		<h2>{{ title }}</h2>
 		<h3><i>{{ author ? 'By ' + author : '' }}</i></h3>
 		<br>
 		<a-spin :spinning="loading">
@@ -42,23 +42,12 @@
 			const data = doc.data();
 			this.title = data.title;
 			this.author = data.author;
-			if (process.browser) {
-				this.loadMarkdown();
-			}
-		},
-		methods: {
-			async loadMarkdown () {
-				const url = await this.$fire.storage.ref('unet').child(this.$nuxt.$route.params.slug + ".md").getDownloadURL();
-				const response = await fetch(url);
-				const md = new Markdown({ toc: false, sanitize: false });
-				this.markdown = (await md.toMarkup(await response.text())).html;
-				this.loading = false;
-			}
-		},
-		mounted () {
-			if (!this.$fetchState.pending) {
-				this.loadMarkdown();
-			}
+			
+			const url = `https://firebasestorage.googleapis.com/v0/b/yacu-website.appspot.com/o/unet%2F${ this.$nuxt.$route.params.slug }.md?alt=media`;
+			const response = await fetch(url);
+			const md = new Markdown({ toc: false, sanitize: false });
+			this.markdown = (await md.toMarkup(await response.text())).html;
+			this.loading = false;
 		}
 	}
 </script>

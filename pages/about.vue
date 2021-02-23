@@ -22,7 +22,7 @@
 		<a-list :loading="$fetchState.pending" :data-source="board" style="text-align: left;">
 			<a-list-item slot="renderItem" slot-scope="item, index">
 				<a-list-item-meta :title="item.name+' ('+item.position+')'" :description="item.description">
-					<a-avatar :size="128" slot="avatar" :src="item.src" />
+					<a-avatar :size="128" slot="avatar" :src="item.download" />
 				</a-list-item-meta>
 			</a-list-item>
 		</a-list>
@@ -59,31 +59,9 @@
 					name: data.name,
 					position: data.position,
 					description: data.description,
-					srcName: data.src,
+					download: data.download,
 				});
-			});
-			if (process.browser) {
-				this.loadPictures();
-			}
-		},
-		methods: {
-			async loadPictures () {
-				const addSrc = async item => {
-					if(item.srcName) {
-						const url = await this.$fire.storage.ref().child(item.srcName).getDownloadURL()
-						return { ...item, src: url }
-					} else {
-						return { ...item, src: '' };
-					}
-				}
-
-				this.board = await Promise.all(this.board.map(addSrc));
-			},
-		},
-		mounted () {
-			if (!this.$fetchState.pending) {
-				this.loadPictures();
-			}
+			})
 		},
 		fetchOnServer: true,
 	}

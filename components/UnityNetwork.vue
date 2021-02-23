@@ -4,7 +4,7 @@
 			<a-col v-for="item in ((truncate && $mq == 'sm') ? articles.slice(0,2) : articles)" :key="item.href" :xs="24" :sm="12" :md="8">
 				<nuxt-link :to="'/unet/' + item.href">
 					<a-card hoverable :bordered="false" style="height: 100%">
-						<img slot="cover" :src="item.src"/>
+						<img slot="cover" :src="item.download"/>
 						<h3>{{ item.title }}</h3>
 						<a-card-meta :description="'By ' + item.author" />
 					</a-card>
@@ -30,32 +30,10 @@
 				this.articles.push({
 					title: data.title,
 					author: data.author,
-					href: data.url,
-					srcName: data.image,
+					href: doc.id,
+					download: data.download,
 				});
 			});
-			if (process.browser) {
-				this.loadPictures();
-			}
-		},
-		methods: {
-			async loadPictures () {
-				const addSrc = async item => {
-					if(item.srcName) {
-						const url = await this.$fire.storage.ref('unet').child(item.srcName).getDownloadURL();
-						return { ...item, src: url };
-					} else {
-						return { ...item, src: '' };
-					}
-				}
-
-				this.articles = await Promise.all(this.articles.map(addSrc));
-			},
-		},
-		mounted () {
-			if (!this.$fetchState.pending) {
-				this.loadPictures();
-			}
 		},
 	}
 </script>
