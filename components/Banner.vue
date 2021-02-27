@@ -1,9 +1,9 @@
 <template>
-	<div style="width: 100%; text-align: center; padding: 4px; background-color: rgb(105, 72, 152);" v-html="text"></div>
+	<div :style="{ width: '100%', textAlign: 'center', padding: '4px', backgroundColor: color }" v-html="text"></div>
 </template>
 
 <script>
 	export default {
-		props: ['text'],
+		props: ['text','color'],
 	}
 </script>

@@ -1,7 +1,8 @@
 <template>
   <a-layout>
     <div id="menu-wrapper">
-      <banner text="<b>Sign the Youth Unity Pledge at <a style='color: rgba(255, 255, 255, 0.85); text-decoration: underline;' href='https://youthunitypledge.com'>youthunitypledge.com</a>!</b>" />
+      <banner text="<b>View the Young Americans Coalition for Unity's <a style='color: rgba(255, 255, 255, 0.85); text-decoration: underline;' href='/report2020'>2020 Annual Report</a></b>" color="rgb(0, 150, 206)" />
+      <banner text="<b>Sign the Youth Unity Pledge at <a style='color: rgba(255, 255, 255, 0.85); text-decoration: underline;' href='https://youthunitypledge.com'>youthunitypledge.com</a></b>" color="rgb(105, 72, 152)" />
       <div id="menu">
         <a-menu :selected-keys="[$nuxt.$route.name]" mode="horizontal" >
           <a-menu-item key="index">

@@ -36,6 +36,7 @@
 			<li><strong>Aiden Rood</strong>, <em>co-founder and former Communications Director</em></li>
 			<li><strong>Charlie Liu</strong>, <em>former Technology Director</em></li>
 			<li><strong>Andrew LaBerge</strong>, <em>former Communications Director</em></li>
+			<li><strong>Alexis Maese</strong>, <em>former Digital Director</em></li>
 		</ul>
 	</a-layout-content>
 </template>
