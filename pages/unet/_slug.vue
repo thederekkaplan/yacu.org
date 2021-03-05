@@ -3,7 +3,7 @@
 		<h2>{{ title }}</h2>
 		<h3><i>{{ author ? 'By ' + author : '' }}</i></h3>
 		<br>
-		<a-spin :spinning="loading">
+		<a-spin :spinning="$fetchState.pending">
 			<div style="text-align: left; max-width: 700px; margin: auto; font-size: 18px;" v-html="markdown"></div>
 		</a-spin>
 	</a-layout-content>
@@ -27,18 +27,15 @@
 				title: '',
 				author: '',
 				markdown: '',
-				loading: true,
 			}
+		},
+		async validate ({ app, params }) {
+			const doc = await app.$fire.firestore.collection('unet').doc(params.slug).get()
+			if (!doc.exists || doc.data().policy) { return false; }
+			return true;
 		},
 		async fetch () {
 			const doc = await this.$fire.firestore.collection('unet').doc(this.$nuxt.$route.params.slug).get();
-			if (!doc.exists) {
-				if (process.server) {
-					this.$nuxt.context.res.statusCode = 404
-				}
-				this.$nuxt.error({ statusCode: 404, message: 'Page not found' });
-				this.loading = false;
-			}
 			const data = doc.data();
 			this.title = data.title;
 			this.author = data.author;
@@ -47,7 +44,6 @@
 			const response = await fetch(url);
 			const md = new Markdown({ toc: false, sanitize: false });
 			this.markdown = (await md.toMarkup(await response.text())).html;
-			this.loading = false;
 		}
 	}
 </script>
