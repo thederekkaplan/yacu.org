@@ -47,7 +47,7 @@
 					this.articles.push({
 						title: data.title,
 						author: data.author,
-						href: doc.id,
+						href: data.policy ? 'policy/' + doc.id : doc.id,
 						download: data.download,
 					});
 				});
