@@ -14,8 +14,8 @@
           <a-menu-item key="unet">
             <nuxt-link to="/unet">Unity Network</nuxt-link>
           </a-menu-item>
-          <a-menu-item key="Shop">
-            <a href="https://shop.yacu.org">Shop</a>
+          <a-menu-item key="Store">
+            <a href="https://store.yacu.org">Store</a>
           </a-menu-item>
           <a-menu-item key="Donate">
             <a href="https://donate.yacu.org">Donate</a>
