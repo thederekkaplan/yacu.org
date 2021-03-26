@@ -22,7 +22,8 @@
 		<a-list :loading="$fetchState.pending" :data-source="board" style="text-align: left;">
 			<a-list-item slot="renderItem" slot-scope="item, index">
 				<a-list-item-meta :title="item.name+' ('+item.position+')'" :description="item.description">
-					<a-avatar :size="128" slot="avatar" :src="item.download" />
+					<a-avatar v-if="item.download" :size="128" slot="avatar" :src="item.download" />
+					<a-avatar v-else :size="128" slot="avatar" icon="user" />
 				</a-list-item-meta>
 			</a-list-item>
 		</a-list>

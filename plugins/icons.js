@@ -10,3 +10,7 @@ export {
 export {
 	default as FilePdfOutline
 } from '@ant-design/icons/lib/outline/FilePdfOutline'
+
+export {
+	default as UserOutline
+} from '@ant-design/icons/lib/outline/UserOutline'
