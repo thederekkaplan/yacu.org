@@ -2,7 +2,7 @@
 	<a-spin :spinning="loading">
 		<a-row type="flex" :gutter="[32, 32]">
 			<a-col v-for="item in ((truncate && $mq == 'sm') ? articles.slice(0,2) : articles)" :key="item.href" :xs="24" :sm="12" :md="8">
-				<nuxt-link :to="'/unet/' + item.href">
+				<nuxt-link :to="'/unet/' + (item.policy ? 'policy/' + item.href : item.href)">
 					<a-card hoverable :bordered="false" style="height: 100%">
 						<img slot="cover" :src="item.download"/>
 						<h3>{{ item.title }}</h3>
@@ -33,6 +33,7 @@
 					author: data.author,
 					href: doc.id,
 					download: data.download,
+					policy: data.policy,
 				});
 			});
 			this.loading = false;
@@ -47,8 +48,9 @@
 					this.articles.push({
 						title: data.title,
 						author: data.author,
-						href: data.policy ? 'policy/' + doc.id : doc.id,
+						href: doc.id,
 						download: data.download,
+						policy: data.policy,
 					});
 				});
 				this.loading = false;
