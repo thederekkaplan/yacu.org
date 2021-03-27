@@ -1,7 +1,9 @@
 <template>
 	<a-layout-content>
 		<h2>{{ title }}</h2>
-		<h3><i>{{ author ? 'By ' + author : '' }}</i></h3>
+		<h3 v-if="author"><i>
+			{{ 'By' }} <a :href="'/unet/author/' + author"> {{ author.replace(/_/g, ' ') }} </a>
+		</i></h3>
 		<br>
 		<a-spin :spinning="$fetchState.pending">
 			<div style="text-align: left; max-width: 700px; margin: auto; font-size: 18px;" v-html="markdown"></div>
@@ -38,7 +40,7 @@
 			const doc = await this.$fire.firestore.collection('unet').doc(this.$nuxt.$route.params.slug).get();
 			const data = doc.data();
 			this.title = data.title;
-			this.author = data.author;
+			this.author = data.author
 			
 			const url = `https://firebasestorage.googleapis.com/v0/b/yacu-website.appspot.com/o/unet%2F${ this.$nuxt.$route.params.slug }.md?alt=media`;
 			const response = await fetch(url);

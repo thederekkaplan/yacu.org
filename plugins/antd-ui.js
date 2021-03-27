@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Layout, Row, Col, Menu, Divider, Spin, List, Carousel, Statistic, Button, Card, Collapse, Affix, Icon, Avatar } from 'ant-design-vue/lib'
+import { Layout, Row, Col, Menu, Divider, Spin, List, Carousel, Statistic, Button, Card, Collapse, Affix, Icon, Avatar, Space } from 'ant-design-vue/lib'
 
 Vue.use(Layout);
 Vue.use(Row);
@@ -16,3 +16,4 @@ Vue.use(Collapse);
 Vue.use(Affix);
 Vue.use(Icon);
 Vue.use(Avatar);
+Vue.use(Space);

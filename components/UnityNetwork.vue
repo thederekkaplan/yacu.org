@@ -6,7 +6,7 @@
 					<a-card hoverable :bordered="false" style="height: 100%">
 						<img slot="cover" :src="item.download"/>
 						<h3>{{ item.title }}</h3>
-						<a-card-meta :description="'By ' + item.author" />
+						<a-card-meta :description="'By ' + item.author.replace(/_/g, ' ')" />
 					</a-card>
 				</nuxt-link>
 			</a-col>
@@ -16,7 +16,7 @@
 
 <script>
 	export default {
-		props: ['limit', 'truncate'],
+		props: ['limit', 'truncate', 'author'],
 		data() {
 			return {
 				articles: [],
@@ -25,8 +25,12 @@
 		},
 		async fetch () {
 			this.articles = [];
-			const snapshot = await this.$fire.firestore.collection('unet').orderBy('date', 'desc').limit(this.limit).get();
-			snapshot.forEach(doc => {
+
+			var collection = this.$fire.firestore.collection('unet');
+			if (this.author) collection = collection.where('author', '==', this.author);
+
+			const snapshot = await collection.orderBy('date', 'desc').limit(this.limit).get();
+			snapshot.forEach(async doc => {
 				const data = doc.data();
 				this.articles.push({
 					title: data.title,
@@ -41,8 +45,13 @@
 		methods: {
 			async loadMore () {
 				this.loading = true;
-				const pointer = await this.$fire.firestore.collection('unet').doc(this.articles[this.articles.length - 1].href).get();
-				const snapshot = await this.$fire.firestore.collection('unet').orderBy('date', 'desc').startAfter(pointer).limit(this.limit).get();
+
+				var collection = this.$fire.firestore.collection('unet');
+				const pointer = await collection.doc(this.articles[this.articles.length - 1].href).get();
+
+				if (this.author) collection = collection.where('author', '==', this.author);
+
+				const snapshot = await collection.orderBy('date', 'desc').startAfter(pointer).limit(this.limit).get();
 				snapshot.forEach(doc => {
 					const data = doc.data();
 					this.articles.push({
