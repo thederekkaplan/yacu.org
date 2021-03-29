@@ -1,5 +1,7 @@
 <template>
 	<a-layout-content>
+		<h1>Our Connections</h1>
+
 		<a-divider id="pye">Partners in Youth Engagement</a-divider>
 		<p>Our Partners in Youth Engagement (PYEs) are youth-focused organizations that can be partisan or nonpartisan. We often collaborate with PYEs to share programming between other young people and to help engage a wider span of young people in politics.</p><br>
 		<a-spin :spinning="spin1" style="width: 100%; max-width: 750px; height: 600px; margin: auto;">

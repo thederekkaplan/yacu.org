@@ -50,6 +50,8 @@
 				</a-spin>
 			</a-collapse-panel>
 		</a-collapse>
+
+		<br><nuxt-link to="/connections"><a-button type="primary">Check out the full database here!</a-button></nuxt-link>
 	</a-layout-content>
 </template>
 
