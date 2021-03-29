@@ -34,12 +34,16 @@
           <br>
           <h3>Young Americans Coalition for Unity, Inc.</h3><br>
           <p>We are a non-profit organization dedicated to engaging youth in politics and promoting bipartisanship and unity.</p>
-          <p><b>Contact:</b> <a href="mailto:info@yacu.org">info@yacu.org</a>
-            <br><b>Twitter:</b> <a href="https://twitter.com/YACUHQ">@YACUHQ</a>
-            <br>
-            <br>Young Americans Coalition for Unity, Inc.
-            <br>1060 Broadway #1065
-            <br>Albany NY 12204</p>
+          <p>
+            <b>Contact:</b> <a href="mailto:info@yacu.org">info@yacu.org</a><br>
+            <b>Twitter:</b> <a href="https://twitter.com/YACUHQ">@YACUHQ</a>
+          </p>
+          <p>
+            Young Americans Coalition for Unity, Inc.<br>
+            1060 Broadway #1065
+            Albany NY 12204<br>
+          </p>
+          <a href="https://www.bridgealliance.us/"><img src="/bridge.png" style="max-width: 200px;" /></a>
         </a-col>
         <a-col :md="12" :sm="24">
           <iframe style="border: 0; width: 100%; max-width: 350px; height: 650px;" src="https://www-yacu-org.filesusr.com/html/58c7c9_ec3abb40b59fc9793c6d48a1995ec963.html"></iframe>
