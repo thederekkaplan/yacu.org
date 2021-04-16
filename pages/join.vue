@@ -39,14 +39,25 @@
 			</a-collapse-panel>
 			<a-collapse-panel key="3" header="Politicians">
 				<p style="font-size: 14px;">As a nonpartisan 501(c)(3) organization, the YACU does not endorse, promote, nor support any of the politicians or candidates listed on our database. During a campaign season, we have listings of volunteer and/or internship opportunities for high school and college students. We also have these candidates present at campaign spotlights during our YACU-Cons. After the election, we have listings of internship opportunities at congressional offices and other offices of elected officials.</p><br>
-				<a-spin :spinning="spin3">
-					<iframe src="https://airtable.com/embed/shrxEzRCLvFQDUFjg?backgroundColor=blue&amp;viewControls=on" width="100%" height="500" frameborder="0" @load="spin3=false" />
-				</a-spin>
+				<a-row :gutter="16">
+					<a-col :sm="24">
+						<h4 style="text-align: center;">Current Elected Officials</h4>
+						<a-spin :spinning="spin3" style="width: 100%; height: 600px;;">
+							<iframe src="https://airtable.com/embed/shrxEzRCLvFQDUFjg?backgroundColor=blue&amp;viewControls=on" width="100%" height="600" frameborder="0" @load="spin3=false" />
+						</a-spin><br>
+					</a-col>
+					<a-col :sm="24">
+						<h4 style="text-align: center;">Campaigns</h4>
+						<a-spin :spinning="spin4" style="width: 100%; height: 600px;;">
+							<iframe src="https://airtable.com/embed/shrq5FpJeQqDM9aZq?backgroundColor=blue&amp;viewControls=on" width="100%" height="600" frameborder="0" @load="spin4=false" />
+						</a-spin>
+					</a-col>
+				</a-row>
 			</a-collapse-panel>
 			<a-collapse-panel key="4" header="Academia">
 				<p style="font-size: 14px;">The YACU is proud to connect with professors from renowned universities to offer our members research/internship opportunities. There are a variety of different research interests in political and public policy fields to be explored. You may connect with any of the professors listed, but preference is given to members of the political education subdivision of the political team.</p><br>
-				<a-spin :spinning="spin4">
-					<iframe src="https://airtable.com/embed/shrbSHbCPSZbKxtbw?backgroundColor=blue&amp;viewControls=on" width="100%" height="500" frameborder="0" @load="spin4=false" />
+				<a-spin :spinning="spin5">
+					<iframe src="https://airtable.com/embed/shrbSHbCPSZbKxtbw?backgroundColor=blue&amp;viewControls=on" width="100%" height="500" frameborder="0" @load="spin5=false" />
 				</a-spin>
 			</a-collapse-panel>
 		</a-collapse>
@@ -66,6 +77,7 @@
 				spin2: true,
 				spin3: true,
 				spin4: true,
+				spin5: true,
 				spinEvents: true,
 				spinChapters: true,
 			}
